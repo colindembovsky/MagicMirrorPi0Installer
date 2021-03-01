@@ -4,7 +4,7 @@ echo 'Updating Pi'
 sudo apt-get update;
 echo 'Upgrading Pi'
 sudo apt-get upgrade;
-sudo apt-get upgrade --fix-missing;
+#sudo apt-get upgrade --fix-missing;
 
 echo 'Downloading node v11.6.0'
 curl -o node-v11.6.0-linux-armv6l.tar.gz  https://nodejs.org/dist/v11.6.0/node-v11.6.0-linux-armv6l.tar.gz; #Most up to date recent version
@@ -21,7 +21,8 @@ echo 'Cloning Magic Mirror'
 git clone https://github.com/MichMich/MagicMirror;
 cd MagicMirror;
 echo 'Installing Magic Mirror Dependencies'
-npx npmc@latest install; npm install acorn@latest; npm install stylelint@latest; npm audit fix;
+npx npmc@latest install -arch=armv71; npm install acorn@latest; npm install stylelint@latest; npm audit fix;
+# or remove -arch from above and just run "npm install -arch=armv71" here
 echo 'Loading default config'
 
 # Use sample config for start MagicMirror
@@ -43,6 +44,6 @@ sudo chmod a+x ~/MagicMirror/PiZero/chromium_startPi0.sh;
 # Use pm2 control like a service MagicMirror
 sudo npm install -g pm2;
 sudo su -c "env PATH=$PATH:/usr/bin pm2 startup systemd -u pi --hp $HOME";
-pm2 start ~/MagicMirror/PiZero/pm2_MagicMirrorPi0.json;
+pm2 start /home/pi/MagicMirror/PiZero/pm2_MagicMirrorPi0.json;
 pm2 save;
 echo 'Magic Mirror should begin shortly'
