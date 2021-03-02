@@ -139,12 +139,13 @@ color: #55acee;
     color: #87CEFA;
 }
 
+/* module bg */
 .module.clock,
 .module.currentweather,
 .module.weatherforecast,
 .module.calendar,
 .module.newsfeed {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.4);
     border-radius: 4px;
     padding: 4px;
 }

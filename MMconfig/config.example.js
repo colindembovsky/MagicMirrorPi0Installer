@@ -83,7 +83,7 @@ var config = {
 		},
 		{
 			module: "newsfeed",
-			position: "bottom_bar",
+			position: "bottom_left",
 			config: {
 				feeds: [
 					{
@@ -96,6 +96,17 @@ var config = {
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true,
 				updateInterval: 15000
+			}
+		},
+		{
+			module: "MMM-GooglePhotos",  // see https://github.com/ChrisAcrobat/MMM-GooglePhotos for install instructions
+			position: "fullscreen_below",
+			config: {
+				sort: "new",
+				uploadAlbum: null,
+				albums: ["DAKboard"],
+				updateInterval: 1000 * 60,
+				timeFormat: "relative"
 			}
 		},
 	]
