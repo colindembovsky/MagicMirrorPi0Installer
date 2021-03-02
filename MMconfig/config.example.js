@@ -94,7 +94,8 @@ var config = {
 				showSourceTitle: true,
 				showPublishDate: true,
 				broadcastNewsFeeds: true,
-				broadcastNewsUpdates: true
+				broadcastNewsUpdates: true,
+				updateInterval: 15000
 			}
 		},
 	]
