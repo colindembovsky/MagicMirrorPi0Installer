@@ -21,7 +21,7 @@ echo 'Cloning Magic Mirror'
 git clone https://github.com/MichMich/MagicMirror;
 cd MagicMirror;
 echo 'Installing Magic Mirror Dependencies'
-npx npmc@latest install; npm install acorn@latest; npm install stylelint@latest; npm audit fix;
+npx npmc@latest install -arch=armv71; npm install acorn@latest; npm install stylelint@latest; npm audit fix;
 echo 'Loading default config'
 
 # Use sample config for start MagicMirror
